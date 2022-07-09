@@ -49,18 +49,6 @@ class _CategoryListState extends State<CategoryList> {
 
   @override
   Widget build(BuildContext context) {
-    List<CategoryModel> categories = [];
-    var jsonData = data;
-    // for (var i = 0; i < data.length; i++) {
-      // categories.add(CategoryModel.fromJson(jsonData[i])
-      //   (
-      //   id: data[i]["idCategory"],
-      //   name: data[i]["strCategory"],
-      //   image: data[i]["strCategoryThumb"],
-      // )
-      // );
-    // }
-    // print(categories[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text('Category List'),
@@ -72,12 +60,12 @@ class _CategoryListState extends State<CategoryList> {
               title: Text(data[index]["strCategory"]),
               leading: Image.network(data[index]["strCategoryThumb"]),
               onTap: (){
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (BuildContext context) => CategoryDetails(data[index]["strCategory"]),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => CategoryDetails(data[index]["strCategory"]),
+                  ),
+                );
               },
             );
           }),
